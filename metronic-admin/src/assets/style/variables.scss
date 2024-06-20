@@ -1,0 +1,74 @@
+
+@mixin mobile {
+    @media screen and (min-width: 280px) and (max-width: 700px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 701px) and (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin dark {
+    .dark-mode {
+        @content;
+    }
+}
+
+@mixin clamp-1 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    -webkit-line-clamp: 1;
+}
+
+@mixin clamp-2 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    -webkit-line-clamp: 2;
+}
+
+@mixin clamp-3 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    -webkit-line-clamp: 3;
+}
+
+@mixin ladder {
+    @content;
+    * {
+        @content;
+    }
+}
+
+
+@mixin hover($focus: false) {
+    @media (hover: hover) {
+        &:hover {
+            &:not(&:disabled) {
+                @content
+            }
+        }
+    }
+    @media (hover: none) {
+        &:active {
+            &:not(&:disabled) {
+                @content
+            }
+        }
+    }
+    @if($focus) {
+        &:focus {
+            &:not(&:disabled) {
+                @content
+            }
+        }
+    }
+}
