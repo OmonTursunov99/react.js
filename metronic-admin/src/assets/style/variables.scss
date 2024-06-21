@@ -1,3 +1,14 @@
+$yellow: #FFC800;
+$orange: #F7941D;
+$aqua: #4BC0B1;
+$info: #19aaff;
+$blue: #69B4F6;
+$deep_blue: #1C274C;
+$green: #5FBB46;
+$white: #fff;
+$red: #ED1459;
+$black: #161617;
+$gray: #F6F7F8;
 
 @mixin mobile {
     @media screen and (min-width: 280px) and (max-width: 700px) {
@@ -12,7 +23,7 @@
 }
 
 @mixin dark {
-    .dark-mode {
+    .theme-dark {
         @content;
     }
 }
@@ -49,7 +60,7 @@
 }
 
 
-@mixin hover($focus: false) {
+@mixin hover() {
     @media (hover: hover) {
         &:hover {
             &:not(&:disabled) {
@@ -59,13 +70,6 @@
     }
     @media (hover: none) {
         &:active {
-            &:not(&:disabled) {
-                @content
-            }
-        }
-    }
-    @if($focus) {
-        &:focus {
             &:not(&:disabled) {
                 @content
             }
