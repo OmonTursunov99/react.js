@@ -1,5 +1,18 @@
+@import "animation";
+@import "theme";
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+    &:has(p),
+    &:has(small) {
+        @include noto-sans;
+    }
+}
+
+body {
+    width: 100%;
+    background-color: $gray;
 }

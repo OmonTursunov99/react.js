@@ -1,0 +1,17 @@
+.main-layout {
+    &__context {
+        padding-left: 265px;
+        min-height: 100dvh;
+        width: 100%;
+        position: relative;
+    }
+    
+    &__main {
+        position: relative;
+        width: 100%;
+    }
+    
+    &__outlet {
+        width: 100%;
+    }
+}

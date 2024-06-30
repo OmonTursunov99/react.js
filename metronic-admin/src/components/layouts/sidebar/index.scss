@@ -1,0 +1,164 @@
+.layout-sidebar {
+    position: fixed;
+    width: 265px;
+    height: 100dvh;
+    padding: 20px 10px;
+    background-color: $black;
+    z-index: 1;
+    .layout-sidebar-head {
+        width: 100%;
+        a {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-decoration: none;
+            color: $white;
+            padding: 0 10px;
+            img {
+                display: block;
+                max-width: 30px;
+            }
+            p {
+                color: inherit;
+                font-size: 18px;
+            }
+        }
+    }
+    .layout-sidebar-body {
+        width: 100%;
+        height: 100%;
+        max-height: calc(100dvh - 50px);
+        padding: 20px 0;
+        .layout-sidebar-body-item {
+            small {
+                font-size: 12px;
+                line-height: 16px;
+                font-weight: 500;
+                color: $white;
+                display: block;
+                padding: 20px 10px 10px;
+                @include clamp-1;
+            }
+            ul {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                li {
+                    width: 100%;
+                    display: block;
+                    list-style-type: none;
+                    
+                    .layout-sidebar-body-item-accordion {
+                        background-color: transparent;
+                        padding: 0 10px;
+                        border-radius: $radius;
+                        transition: $delay;
+                        
+                        button {
+                            width: 100%;
+                            background-color: transparent;
+                            border: none;
+                            cursor: pointer;
+                            padding: 10px 0;
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            text-decoration: none;
+                            color: darken($white, 40%);
+                            .material-main {
+                                color: inherit;
+                                font-size: 20px;
+                                transition: $delay;
+                            }
+                            p {
+                                transition: $delay;
+                                color: inherit;
+                                font-size: 14px;
+                                @include clamp-1;
+                            }
+                            .material-arrow {
+                                color: inherit;
+                                font-size: 15px;
+                                transition: $delay;
+                                margin-left: auto;
+                            }
+                            
+                            @include hover {
+                                color: $white;
+                            }
+                        }
+                        .layout-sidebar-body-item-accordion-body {
+                            display: grid;
+                            grid-template-columns: repeat(1, 1fr);
+                            overflow: hidden;
+                            transition: $delay;
+                            a {
+                                color: darken($white, 40%);
+                                text-decoration: none;
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                gap: 10px;
+                                padding: 10px 0 10px 20px;
+                                .material-point {
+                                    color: inherit;
+                                    transition: $delay;
+                                    font-size: 10px;
+                                }
+                                p {
+                                    font-size: 12px;
+                                    color: inherit;
+                                    transition: $delay;
+                                    @include clamp-1;
+                                }
+                                @include hover {
+                                    color: $white;
+                                }
+                                
+                                &.layout-sidebar-body-item-accordion-body-link-active {
+                                    color: $white;
+                                }
+                            }
+                        }
+                        
+                        &.layout-sidebar-body-item-accordion-active {
+                            background-color: darken($white, 90%);
+                            .layout-sidebar-body-item-accordion-body {
+                                //max-height: unset;
+                            }
+                        }
+                    }
+                    .layout-sidebar-body-item-link {
+                        width: 100%;
+                        padding: 10px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        text-decoration: none;
+                        color: darken($white, 40%);
+                        .material-main {
+                            color: inherit;
+                            font-size: 20px;
+                            transition: $delay;
+                        }
+                        p {
+                            transition: $delay;
+                            color: inherit;
+                            font-size: 14px;
+                            @include clamp-1;
+                        }
+                        
+                        @include hover {
+                            color: $white;
+                        }
+                        
+                        &.layout-sidebar-body-item-link-active {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

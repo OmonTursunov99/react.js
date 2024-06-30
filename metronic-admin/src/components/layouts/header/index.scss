@@ -1,0 +1,24 @@
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    transition: $delay;
+    
+    &__view {
+        height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 5px;
+    }
+    
+    &.header__sticky {
+        background-color: $white;
+    }
+}

@@ -1,25 +1,33 @@
-$yellow: #FFC800;
-$orange: #F7941D;
-$aqua: #4BC0B1;
-$info: #19aaff;
-$blue: #69B4F6;
-$deep_blue: #1C274C;
-$green: #5FBB46;
+$primary: #01D1B2;
+$text: #404755;
+$black: #0d0e12;
+$link: #4258FF;
+$info: #66D1FF;
+$success: #48C78E;
+$warning: #FFB711;
+$danger: #FF6685;
 $white: #fff;
-$red: #ED1459;
-$black: #161617;
-$gray: #F6F7F8;
+$gray: #F9F9F9;
+
+$delay: 300ms;
+$radius: 4px;
 
 @mixin mobile {
-    @media screen and (min-width: 280px) and (max-width: 700px) {
+    @media screen and (min-width: 320px) and (max-width: 768px) {
         @content;
     }
 }
 
 @mixin tablet {
-    @media screen and (min-width: 701px) and (max-width: 1199px) {
+    @media screen and (min-width: 769px) and (max-width: 1215px) {
         @content;
     }
+}
+
+@mixin noto-sans {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 @mixin dark {

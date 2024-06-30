@@ -1,0 +1,48 @@
+.default-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: $radius;
+    transition: $delay;
+    
+    .default-button__icon {
+        font-size: 20px;
+        color: inherit;
+    }
+    .default-button__label {
+        font-size: 14px;
+        line-height: 20px;
+        color: inherit;
+    }
+    
+    &.default-button__only-icon {
+        padding: 7.5px;
+    }
+    
+    &.default-button__light {
+        background-color: transparent;
+        color: $text;
+        border: none;
+        
+        @media (hover: hover) {
+            &:hover {
+                background-color: lighten($black, 90%);
+                color: $primary;
+            }
+            &:active {
+                background-color: $primary;
+                color: $white;
+            }
+        }
+        @media (hover: none) {
+            &:active {
+                background-color: $primary;
+                color: $white;
+            }
+        }
+    }
+}
